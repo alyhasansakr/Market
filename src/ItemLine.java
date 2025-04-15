@@ -3,7 +3,7 @@ public class ItemLine {
     Double count;
 
     Double getTotal() {
-        return item.price * count;
+        return item.getPrice() * count;
     }
 
     @Override
