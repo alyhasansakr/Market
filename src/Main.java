@@ -8,6 +8,7 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
 
+    //handle item operations
     static void itemOperation() {
         System.out.print("Choose operation (add, remove, edit, print): ");
         String op = scanner.next();
@@ -24,6 +25,7 @@ public class Main {
         }
     }
 
+    //handle order operations
     static void orderOperation() {
         System.out.print("Choose operation (new, add, remove, print): ");
         String op = scanner.next();
