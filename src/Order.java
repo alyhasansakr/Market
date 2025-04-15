@@ -1,7 +1,23 @@
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<ItemLine> itemLines = new ArrayList<>();
+    private ArrayList<ItemLine> itemLines = new ArrayList<>();
+
+    /*public ArrayList<ItemLine> getItemLines() {
+        return itemLines;
+    }*/
+
+    /*public void setItemLines(ArrayList<ItemLine> itemLines) {
+        this.itemLines = itemLines;
+    }*/
+
+    public void addItemLine(ItemLine itemLine) {
+        itemLines.add(itemLine);
+    }
+
+    public void removeItemLine(int index) {
+        itemLines.remove(index);
+    }
 
     Double getTotal() {
         Double sum = 0.0;
