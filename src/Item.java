@@ -1,6 +1,14 @@
 public class Item {
-    String name;
+    private String name;
     private Double price;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Double getPrice() {
         return price;
