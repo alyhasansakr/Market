@@ -50,7 +50,7 @@ public class Main {
         String ans;
 
         do {
-            System.out.print("Choose operation (item, order): ");
+            System.out.print("Please enter order / item: ");
             String op = scanner.next();
 
             if (op.equals("item")) {
