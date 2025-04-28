@@ -15,14 +15,14 @@ public class ItemManager {
         Double price = scanner.nextDouble();
 
         Item item = new Item();
-        item.name = name;
-        item.price = price;
+        item.setName(name);
+        item.setPrice(price);
         items.add(item);
     }
 
     void printItems() {
         for (int i = 0; i < items.size(); i++) {
-            System.out.println(i + ": " + items.get(i).name + ", " + items.get(i).price);
+            System.out.println(i + ": " + items.get(i).getName() + ", " + items.get(i).getPrice());
         }
     }
 
@@ -48,7 +48,7 @@ public class ItemManager {
         Double price = scanner.nextDouble();
 
         Item item = items.get(index);
-        item.name = name;
-        item.price = price;
+        item.setName(name);
+        item.setPrice(price);
     }
 }

@@ -1,9 +1,25 @@
 public class ItemLine {
-    Item item;
-    Double count;
+    private Item item;
+    private Double count;
+
+    public Double getCount() {
+        return count;
+    }
+
+    public void setCount(Double count) {
+        this.count = count;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
 
     Double getTotal() {
-        return item.price * count;
+        return item.getPrice() * count;
     }
 
     @Override

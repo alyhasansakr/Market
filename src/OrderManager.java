@@ -16,9 +16,10 @@ public class OrderManager {
         Double count = scanner.nextDouble();
 
         ItemLine itemLine = new ItemLine();
-        itemLine.item = Main.itemManager.items.get(index);
-        itemLine.count = count;
-        order.itemLines.add(itemLine);
+        itemLine.setItem(Main.itemManager.items.get(index));
+        itemLine.setCount(count);
+        //order.getItemLines().add(itemLine);
+        order.addItemLine(itemLine);
     }
 
     void printOrder() {
@@ -31,7 +32,8 @@ public class OrderManager {
         System.out.print("Enter item id to remove: ");
         int index = scanner.nextInt();
 
-        order.itemLines.remove(index);
+        //order.getItemLines().remove(index);
+        order.removeItemLine(index);
     }
 
     void newOrder() {
