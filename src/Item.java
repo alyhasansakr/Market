@@ -1,14 +1,16 @@
 public class Item {
     private String name;
     private Double price;
+    private ItemType type;
 
     /*public Item() {
         System.out.println("Item Created");
     }*/
 
-    public Item(String name, Double price) {
+    public Item(String name, Double price, ItemType type) {
         this.name = name;
         this.price = price;
+        this.type = type;
     }
 
     public String getName() {
@@ -33,6 +35,14 @@ public class Item {
         } else {
             this.price = price;
         }
+    }
+
+    public ItemType getType() {
+        return type;
+    }
+
+    public void setType(ItemType type) {
+        this.type = type;
     }
 
     @Override
