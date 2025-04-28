@@ -2,6 +2,16 @@ public class ItemLine {
     private Item item;
     private Double count;
 
+    public ItemLine(Item item, Double count) {
+        this.item = item;
+        this.count = count;
+    }
+
+    public ItemLine(Item item) {
+        this.item = item;
+        this.count = 1.0;
+    }
+
     public Double getCount() {
         return count;
     }
@@ -12,10 +22,6 @@ public class ItemLine {
 
     public Item getItem() {
         return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
     }
 
     Double getTotal() {

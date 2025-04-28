@@ -15,9 +15,10 @@ public class OrderManager {
         System.out.print("Enter item count: ");
         Double count = scanner.nextDouble();
 
-        ItemLine itemLine = new ItemLine();
-        itemLine.setItem(Main.itemManager.items.get(index));
-        itemLine.setCount(count);
+        Item item = Main.itemManager.items.get(index);
+        ItemLine itemLine = new ItemLine(item, count);
+        //ItemLine itemLine1 = new ItemLine(item);
+        //itemLine1.setCount(count);
         //order.getItemLines().add(itemLine);
         order.addItemLine(itemLine);
     }

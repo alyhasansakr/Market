@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Order {
     private ArrayList<ItemLine> itemLines = new ArrayList<>();
-
+    
     /*public ArrayList<ItemLine> getItemLines() {
         return itemLines;
     }*/
@@ -10,6 +10,10 @@ public class Order {
     /*public void setItemLines(ArrayList<ItemLine> itemLines) {
         this.itemLines = itemLines;
     }*/
+
+    public Order() {
+        //itemLines = new ArrayList<>();
+    }
 
     public void addItemLine(ItemLine itemLine) {
         itemLines.add(itemLine);

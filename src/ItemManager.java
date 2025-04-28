@@ -7,16 +7,14 @@ public class ItemManager {
 
     Scanner scanner = new Scanner(System.in);
 
-    void addItem() {
+    public void addItem() {
         System.out.print("Enter item name: ");
         String name = scanner.next();
 
         System.out.print("Enter item price: ");
         Double price = scanner.nextDouble();
 
-        Item item = new Item();
-        item.setName(name);
-        item.setPrice(price);
+        Item item = new Item(name, price);
         items.add(item);
     }
 

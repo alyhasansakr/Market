@@ -2,6 +2,15 @@ public class Item {
     private String name;
     private Double price;
 
+    /*public Item() {
+        System.out.println("Item Created");
+    }*/
+
+    public Item(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }
