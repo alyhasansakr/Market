@@ -1,6 +1,7 @@
+import javax.swing.border.Border;
 import java.util.ArrayList;
 
-public class Order {
+public class Order implements Printable {
     private ArrayList<ItemLine> itemLines = new ArrayList<>();
     
     /*public ArrayList<ItemLine> getItemLines() {
@@ -32,22 +33,25 @@ public class Order {
     }
 
     @Override
-    public String toString() {
+    public String toStringShort () {return "";}
 
-        String s = "";
+        @Override
+        public String toStringLong () {
 
-        s += "id: name, price, count, total";
-        s += "\n";
+            String s = "";
 
-        for (int i = 0; i < itemLines.size(); i++) {
-            s += i + ": ";
-            s += itemLines.get(i).toString();
+            s += "id: name, price, count, total";
             s += "\n";
+
+            for (int i = 0; i < itemLines.size(); i++) {
+                s += i + ": ";
+                s += itemLines.get(i).toStringLong();
+                s += "\n";
+            }
+
+            s += "Total: " + getTotal();
+            s += "\n";
+
+            return s;
         }
-
-        s += "Total: " + getTotal();
-        s += "\n";
-
-        return s;
     }
-}

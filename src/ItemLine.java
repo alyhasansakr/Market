@@ -1,4 +1,4 @@
-public class ItemLine {
+public class ItemLine implements Printable {
     private Item item;
     private Double count;
 
@@ -29,13 +29,16 @@ public class ItemLine {
     }
 
     @Override
-    public String toString() {
-        String s = "";
+    public String toStringShort () {return item.getName();}
 
-        s += item.toString();
-        s += count + ", ";
-        s += getTotal();
+        @Override
+        public String toStringLong () {
+            String s = "";
 
-        return s;
+            s += item.toStringLong() + ", ";
+            s += count + ", ";
+            s += getTotal() ;
+
+            return s;
+        }
     }
-}
