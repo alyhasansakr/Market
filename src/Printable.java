@@ -1,4 +1,4 @@
 public interface Printable {
-     String toStrigShort();
+     String toStringShort();
      String toStringLong();
 }

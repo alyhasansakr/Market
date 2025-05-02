@@ -22,7 +22,7 @@ public class ItemManager {
 
     void printItems() {
         for (int i = 0; i < items.size(); i++) {
-            System.out.println(i + ": " + items.get(i).getName() + ", " + items.get(i).getPrice());
+            System.out.println(i + ": " + items.get(i).toStringLong());
         }
     }
 

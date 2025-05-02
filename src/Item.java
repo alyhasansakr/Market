@@ -1,4 +1,4 @@
-public class Item implements Printable{
+public class Item implements Printable {
     private String name;
     private Double price;
 
@@ -27,17 +27,14 @@ public class Item implements Printable{
     }
 
     @Override
-    public String toString() {
-    public String toStringShort() {
-            return name;
-    }
+    public String toStringShort() {return name;}
 
     @Override
     public String toStringLong() {
         String s = "";
 
-        s += name + ", ";
-        s += price + ", ";
+        s += getName() + ", ";
+        s += getPrice();
 
         return s;
     }

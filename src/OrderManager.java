@@ -23,7 +23,7 @@ public class OrderManager {
     }
 
     void printOrder() {
-        System.out.println(order.toString());
+        System.out.println(order.toStringLong());
     }
 
     void removeItemLine() {

@@ -23,20 +23,16 @@ public class ItemLine implements Printable {
     }
 
     @Override
-    public String toString() {
-        public String toStringShort () {
-            return name;
-        }
+    public String toStringShort () {return item.getName();}
 
         @Override
-        public String toString () {
+        public String toStringLong () {
             String s = "";
 
-            s += item.toStringShort();
+            s += item.toStringLong() + ", ";
             s += count + ", ";
-            s += getTotal();
+            s += getTotal() ;
 
             return s;
         }
     }
-}
