@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import Exceptions.UnknownOperation;
+
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
         } else if (op.equals("print")) {
             itemManager.printItems();
         } else {
-            System.out.println("Unknown operation!");
+            throw new UnknownOperation(op + " is not an operation!");
         }
     }
 
@@ -39,7 +40,7 @@ public class Main {
         } else if (op.equals("print")) {
             orderManager.printOrder();
         } else {
-            System.out.println("Unknown operation!");
+            throw new UnknownOperation(op + " is not an operation!");
         }
     }
 
@@ -50,15 +51,19 @@ public class Main {
         String ans;
 
         do {
-            System.out.print("Operation selection (item, order): ");
-            String op = scanner.next();
+            try {
+                System.out.print("Operation selection (item, order): ");
+                String op = scanner.next();
 
-            if (op.equals("item")) {
-                itemOperation();
-            } else if(op.equals("order")) {
-                orderOperation();
-            } else {
-                System.out.println("Unknown operation!");
+                if (op.equals("item")) {
+                    itemOperation();
+                } else if(op.equals("order")) {
+                    orderOperation();
+                } else {
+                    throw new UnknownOperation(op + " is not an operation!");
+                }
+            } catch (Exception e) {
+                System.out.println("Exception: " + e);
             }
 
             System.out.println("Do you wish to continue? (y/n)");

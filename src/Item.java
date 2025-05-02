@@ -1,3 +1,6 @@
+import Exceptions.NameBlank;
+import Exceptions.PriceNegative;
+
 public class Item implements Printable {
     private String name;
     private Double price;
@@ -7,8 +10,8 @@ public class Item implements Printable {
     }*/
 
     public Item(String name, Double price) {
-        this.name = name;
-        this.price = price;
+        setName(name);
+        setPrice(price);
     }
 
     public String getName() {
@@ -16,6 +19,9 @@ public class Item implements Printable {
     }
 
     public void setName(String name) {
+        if (name.isBlank()) {
+            throw new NameBlank(name + " is blank");
+        }
         this.name = name;
     }
 
@@ -29,7 +35,7 @@ public class Item implements Printable {
 
     public void setPrice(Double price) {
         if (price < 0) {
-            this.price = 0.0;
+            throw new PriceNegative(price + " for " + getName() + " is less than 0");
         } else {
             this.price = price;
         }

@@ -1,10 +1,12 @@
+import Exceptions.CountNegative;
+
 public class ItemLine implements Printable {
     private Item item;
     private Double count;
 
     public ItemLine(Item item, Double count) {
         this.item = item;
-        this.count = count;
+        setCount(count);
     }
 
     public ItemLine(Item item) {
@@ -17,7 +19,11 @@ public class ItemLine implements Printable {
     }
 
     public void setCount(Double count) {
-        this.count = count;
+        if (count < 0) {
+            throw new CountNegative(count + " for " + item.getName() + " is negative");
+        } else {
+            this.count = count;
+        }
     }
 
     public Item getItem() {
