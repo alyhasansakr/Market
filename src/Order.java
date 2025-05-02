@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Order {
+public class Order implements Printable{
     private ArrayList<ItemLine> itemLines = new ArrayList<>();
 
     /*public ArrayList<ItemLine> getItemLines() {
@@ -29,21 +29,28 @@ public class Order {
 
     @Override
     public String toString() {
-
-        String s = "";
-
-        s += "id: name, price, count, total";
-        s += "\n";
-
-        for (int i = 0; i < itemLines.size(); i++) {
-            s += i + ": ";
-            s += itemLines.get(i).toString();
-            s += "\n";
+        public String toStringShort () {
+            return name;
         }
 
-        s += "Total: " + getTotal();
-        s += "\n";
+        @Override
+        public String toStringLong () {
 
-        return s;
+            String s = "";
+
+            s += "id: name, price, count, total";
+            s += "\n";
+
+            for (int i = 0; i < itemLines.size(); i++) {
+                s += i + ": ";
+                s += itemLines.get(i).toStringShort();
+                s += "\n";
+            }
+
+            s += "Total: " + getTotal();
+            s += "\n";
+
+            return s;
+        }
     }
 }
