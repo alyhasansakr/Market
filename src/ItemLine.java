@@ -1,5 +1,6 @@
 import Exceptions.CountNegative;
 
+// each order has multiple item lines each for a specific item
 public class ItemLine implements Printable {
     private Item item;
     private Double count;
@@ -11,7 +12,7 @@ public class ItemLine implements Printable {
 
     public ItemLine(Item item) {
         this.item = item;
-        this.count = 1.0;
+        this.count = 1.0;   // 1 is the default count for items
     }
 
     public Double getCount() {
@@ -19,6 +20,7 @@ public class ItemLine implements Printable {
     }
 
     public void setCount(Double count) {
+        // negative count is not possible in business
         if (count < 0) {
             throw new CountNegative(count + " for " + item.getName() + " is negative");
         } else {
